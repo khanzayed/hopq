@@ -19,6 +19,8 @@ class FavouritesHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,8 +33,7 @@ class FavouritesHomeViewController: UIViewController {
         if events.count > 0 {
             noFavView.isHidden = true
             
-            tableView.dataSource = self
-            tableView.delegate = self
+            tableView.reloadData()
         } else {
             noFavView.isHidden = false
         }
