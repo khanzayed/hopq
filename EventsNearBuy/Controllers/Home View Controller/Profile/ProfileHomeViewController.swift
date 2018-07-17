@@ -34,6 +34,7 @@ class ProfileHomeViewController: UIViewController {
     }
     
     private func setupUI() {
+        nameLbl.text = user.name ?? ""
         emailLbl.text = user.email ?? ""
         notificationSwitch.isOn = user.notificationStatus.boolValue
         

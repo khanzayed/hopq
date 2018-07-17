@@ -71,6 +71,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signInButtonTapped(_ sender: UIButton) {
+        self.view.endEditing(true)
+        
         if validateFields(), DataAccessor.shared.checIfUserExist(emailTextField.text!, password: passwordTextField.text!) {
             AppPreferences.userLoggedIn(userID: emailTextField.text!)
             
@@ -81,7 +83,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpTapped(_ sender: UIButton) {
-        
+        self.view.endEditing(true)
     }
     
 }

@@ -83,6 +83,8 @@ class RegistationViewController: UIViewController {
     }
 
     @IBAction func signUpTapped(_ sender: UIButton) {
+        self.view.endEditing(true)
+        
         if validateFields() {
             if DataAccessor.shared.checkIfUserExist(emailTextField.text!) {
                 showError("Email id is already taken.")
